@@ -1,1 +1,63 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  /* Primary — SWG blauw */
+  --color-primary-50: #e6edff;
+  --color-primary-100: #ccdaff;
+  --color-primary-200: #99b5ff;
+  --color-primary-300: #668fff;
+  --color-primary-400: #336aff;
+  --color-primary-500: #003dff;
+  --color-primary-600: #0031cc;
+  --color-primary-700: #002599;
+  --color-primary-800: #001866;
+  --color-primary-900: #000c33;
+
+  /* Accent — oranje */
+  --color-accent-400: #ff8c5a;
+  --color-accent-500: #ff6b35;
+  --color-accent-600: #e5521c;
+
+  /* Dark — Algolia navy */
+  --color-dark: #1d1c2c;
+  --color-dark-secondary: #2d2c3e;
+
+  /* Neutral */
+  --color-muted: #6b7280;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+
+  /* Font */
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+/* Base */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus visible — skip :focus in favour of :focus-visible */
+  *:focus {
+    outline: none;
+  }
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  /* Smooth scroll — respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}

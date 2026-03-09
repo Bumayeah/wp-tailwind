@@ -6,8 +6,8 @@ import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
 
-const route = useRoute()
-const slug = computed(() => route.params.slug as string)
+const route = useRoute('/agenda/[slug]/aanmelden')
+const slug = computed(() => route.params.slug)
 const auth = useAuthStore()
 const ui = useUiStore()
 const queryClient = useQueryClient()

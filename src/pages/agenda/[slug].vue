@@ -5,8 +5,8 @@ import { userService } from '@/features/user/user.service'
 import type { Registration } from '@/features/user/user.service'
 import AvailabilityBadge from '@/features/agenda/components/AvailabilityBadge.vue'
 
-const route = useRoute()
-const slug = computed(() => route.params.slug as string)
+const route = useRoute('/agenda/[slug]')
+const slug = computed(() => route.params.slug)
 const auth = useAuthStore()
 const ui = useUiStore()
 const queryClient = useQueryClient()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { blogService } from '@/features/blog/blog.service'
 
-const route = useRoute()
-const slug = computed(() => route.params.slug as string)
+const route = useRoute('/blog-posts/[slug]')
+const slug = computed(() => route.params.slug)
 
 const { formatDateFull } = useFormatting()
 

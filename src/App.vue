@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed, onErrorCaptured } from 'vue'
+import { useQuery } from '@tanstack/vue-query'
+import { useHead } from '@unhead/vue'
 import { pageService } from '@/shared/services/page.service'
 
 const { data: siteOptions } = useQuery({
@@ -8,13 +11,13 @@ const { data: siteOptions } = useQuery({
 })
 
 useHead(computed(() => ({
-  titleTemplate: (title) => {
+  titleTemplate: (title?: string) => {
     const name = siteOptions.value?.site_name ?? 'SWG Nederland'
     return title ? `${title} — ${name}` : name
   },
 })))
 
-onErrorCaptured((err, _instance, info) => {
+onErrorCaptured((err: unknown, _instance, info: string) => {
   console.error('[App] Uncaught component error', { err, info })
   return false
 })

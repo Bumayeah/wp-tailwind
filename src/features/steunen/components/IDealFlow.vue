@@ -19,11 +19,14 @@ const schema = toTypedSchema(
   ),
 )
 
-const { handleSubmit, defineField, errors, isSubmitting, resetForm } = useForm({ validationSchema: schema })
+const { handleSubmit, defineField, errors, isSubmitting } = useForm({
+  validationSchema: schema,
+  initialValues: { frequentie: 'eenmalig' as const },
+})
 
-const [bedragPreset, bedragPresetAttrs] = defineField('bedrag_preset')
+const [bedragPreset] = defineField('bedrag_preset')
 const [bedragEigen, bedragEigenAttrs] = defineField('bedrag_eigen')
-const [frequentie, frequentieAttrs] = defineField('frequentie', { initialValue: 'eenmalig' })
+const [frequentie] = defineField('frequentie')
 const [naam, naamAttrs] = defineField('naam')
 const [email, emailAttrs] = defineField('email')
 const [honeypot] = defineField('honeypot')

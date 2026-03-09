@@ -9,6 +9,26 @@ import dbOriginal from '../../../mock-api/db.json'
 type Db = typeof dbOriginal
 const db: Db = JSON.parse(JSON.stringify(dbOriginal))
 
+/**
+ * Recursively prefix `/images/...` paths with Vite's BASE_URL so that
+ * public-folder assets resolve correctly on GitHub Pages (/wp-tailwind/images/...).
+ */
+const BASE = import.meta.env.BASE_URL // '/' in dev, '/wp-tailwind/' in production
+
+function withBasePath<T>(data: T): T {
+  if (typeof data === 'string') {
+    if (data.startsWith('/images/')) return `${BASE}${data.slice(1)}` as T
+    return data
+  }
+  if (Array.isArray(data)) return data.map(withBasePath) as T
+  if (data !== null && typeof data === 'object') {
+    return Object.fromEntries(
+      Object.entries(data as object).map(([k, v]) => [k, withBasePath(v)]),
+    ) as T
+  }
+  return data
+}
+
 function getUserId(): number | null {
   const token = localStorage.getItem('swg-token')
   if (!token) return null
@@ -22,51 +42,52 @@ function parsePath(path: string): { base: string; id?: number } {
 
 export function mockGet<T>(path: string, params?: Record<string, string>): T {
   const { base, id } = parsePath(path)
+  const r = <D>(data: D) => withBasePath(data) as unknown as T
 
   switch (base) {
     case '/wp/v2/posts':
-      if (params?.slug) return db.posts.filter((p) => p.slug === params.slug) as T
-      return db.posts as T
+      if (params?.slug) return r(db.posts.filter((p) => p.slug === params.slug))
+      return r(db.posts)
 
     case '/wp/v2/pages':
-      if (params?.slug) return db.pages.filter((p) => p.slug === params.slug) as T
-      return db.pages as T
+      if (params?.slug) return r(db.pages.filter((p) => p.slug === params.slug))
+      return r(db.pages)
 
     case '/swg/v1/agenda':
-      if (id !== undefined) return (db.agenda.find((a) => a.id === id) ?? null) as T
-      if (params?.slug) return db.agenda.filter((a) => a.slug === params.slug) as T
-      return db.agenda as T
+      if (id !== undefined) return r(db.agenda.find((a) => a.id === id) ?? null)
+      if (params?.slug) return r(db.agenda.filter((a) => a.slug === params.slug))
+      return r(db.agenda)
 
     case '/swg/v1/bestuur':
-      return db.board as T
+      return r(db.board)
 
     case '/swg/v1/sponsors':
-      return db.sponsors as T
+      return r(db.sponsors)
 
     case '/swg/v1/testimonials':
-      return db.testimonials as T
+      return r(db.testimonials)
 
     case '/acf/v3/options/options':
       // json-server routes /site_options/1 → returns single object, not array
-      return (db.site_options[0] ?? null) as T
+      return r(db.site_options[0] ?? null)
 
     case '/jwt-auth/v1/token':
-      if (params?.email) return db.auth_tokens.filter((r) => r.email === params.email) as T
-      return db.auth_tokens as T
+      if (params?.email) return r(db.auth_tokens.filter((re) => re.email === params.email))
+      return r(db.auth_tokens)
 
     case '/swg/v1/mijn/inschrijvingen': {
       const uid = getUserId()
-      return db.mijn_inschrijvingen.filter((r) => r.user_id === uid) as T
+      return r(db.mijn_inschrijvingen.filter((item) => item.user_id === uid))
     }
 
     case '/swg/v1/mijn/vragen': {
       const uid = getUserId()
-      return db.mijn_vragen.filter((q) => q.user_id === uid) as T
+      return r(db.mijn_vragen.filter((q) => q.user_id === uid))
     }
 
     case '/swg/v1/mijn/profiel': {
       const uid = getUserId()
-      return db.mijn_profiel.filter((p) => p.user_id === uid) as T
+      return r(db.mijn_profiel.filter((p) => p.user_id === uid))
     }
 
     default:

@@ -37,6 +37,149 @@ declare module 'vue-router/auto-routes' {
       { all: ParamValue<false> },
       | never
     >,
+    '/account/wachtwoord-vergeten': RouteRecordInfo<
+      '/account/wachtwoord-vergeten',
+      '/account/wachtwoord-vergeten',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/agenda/': RouteRecordInfo<
+      '/agenda/',
+      '/agenda',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/agenda/[slug]': RouteRecordInfo<
+      '/agenda/[slug]',
+      '/agenda/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
+      | '/agenda/[slug]/aanmelden'
+    >,
+    '/agenda/[slug]/aanmelden': RouteRecordInfo<
+      '/agenda/[slug]/aanmelden',
+      '/agenda/:slug/aanmelden',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
+      | never
+    >,
+    '/algemeenbestuur': RouteRecordInfo<
+      '/algemeenbestuur',
+      '/algemeenbestuur',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/algemene-voorwaarden': RouteRecordInfo<
+      '/algemene-voorwaarden',
+      '/algemene-voorwaarden',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/blog-posts/[slug]': RouteRecordInfo<
+      '/blog-posts/[slug]',
+      '/blog-posts/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
+      | never
+    >,
+    '/contact': RouteRecordInfo<
+      '/contact',
+      '/contact',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/cookies': RouteRecordInfo<
+      '/cookies',
+      '/cookies',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/mijn': RouteRecordInfo<
+      '/mijn',
+      '/mijn',
+      Record<never, never>,
+      Record<never, never>,
+      | '/mijn/'
+      | '/mijn/inschrijvingen'
+      | '/mijn/profiel'
+      | '/mijn/vragen'
+    >,
+    '/mijn/': RouteRecordInfo<
+      '/mijn/',
+      '/mijn',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/mijn/inschrijvingen': RouteRecordInfo<
+      '/mijn/inschrijvingen',
+      '/mijn/inschrijvingen',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/mijn/profiel': RouteRecordInfo<
+      '/mijn/profiel',
+      '/mijn/profiel',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/mijn/vragen': RouteRecordInfo<
+      '/mijn/vragen',
+      '/mijn/vragen',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/nieuws': RouteRecordInfo<
+      '/nieuws',
+      '/nieuws',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/over-ons': RouteRecordInfo<
+      '/over-ons',
+      '/over-ons',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/privacy': RouteRecordInfo<
+      '/privacy',
+      '/privacy',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/steunen': RouteRecordInfo<
+      '/steunen',
+      '/steunen',
+      Record<never, never>,
+      Record<never, never>,
+      | '/steunen/bedankt'
+    >,
+    '/steunen/bedankt': RouteRecordInfo<
+      '/steunen/bedankt',
+      '/steunen/bedankt',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/veelgesteldevragen': RouteRecordInfo<
+      '/veelgesteldevragen',
+      '/veelgesteldevragen',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -59,6 +202,132 @@ declare module 'vue-router/auto-routes' {
     'src/pages/[...all].vue': {
       routes:
         | '/[...all]'
+      views:
+        | never
+    }
+    'src/pages/account/wachtwoord-vergeten.vue': {
+      routes:
+        | '/account/wachtwoord-vergeten'
+      views:
+        | never
+    }
+    'src/pages/agenda/index.vue': {
+      routes:
+        | '/agenda/'
+      views:
+        | never
+    }
+    'src/pages/agenda/[slug].vue': {
+      routes:
+        | '/agenda/[slug]'
+        | '/agenda/[slug]/aanmelden'
+      views:
+        | 'default'
+    }
+    'src/pages/agenda/[slug]/aanmelden.vue': {
+      routes:
+        | '/agenda/[slug]/aanmelden'
+      views:
+        | never
+    }
+    'src/pages/algemeenbestuur.vue': {
+      routes:
+        | '/algemeenbestuur'
+      views:
+        | never
+    }
+    'src/pages/algemene-voorwaarden.vue': {
+      routes:
+        | '/algemene-voorwaarden'
+      views:
+        | never
+    }
+    'src/pages/blog-posts/[slug].vue': {
+      routes:
+        | '/blog-posts/[slug]'
+      views:
+        | never
+    }
+    'src/pages/contact.vue': {
+      routes:
+        | '/contact'
+      views:
+        | never
+    }
+    'src/pages/cookies.vue': {
+      routes:
+        | '/cookies'
+      views:
+        | never
+    }
+    'src/pages/mijn.vue': {
+      routes:
+        | '/mijn'
+        | '/mijn/'
+        | '/mijn/inschrijvingen'
+        | '/mijn/profiel'
+        | '/mijn/vragen'
+      views:
+        | 'default'
+    }
+    'src/pages/mijn/index.vue': {
+      routes:
+        | '/mijn/'
+      views:
+        | never
+    }
+    'src/pages/mijn/inschrijvingen.vue': {
+      routes:
+        | '/mijn/inschrijvingen'
+      views:
+        | never
+    }
+    'src/pages/mijn/profiel.vue': {
+      routes:
+        | '/mijn/profiel'
+      views:
+        | never
+    }
+    'src/pages/mijn/vragen.vue': {
+      routes:
+        | '/mijn/vragen'
+      views:
+        | never
+    }
+    'src/pages/nieuws.vue': {
+      routes:
+        | '/nieuws'
+      views:
+        | never
+    }
+    'src/pages/over-ons.vue': {
+      routes:
+        | '/over-ons'
+      views:
+        | never
+    }
+    'src/pages/privacy.vue': {
+      routes:
+        | '/privacy'
+      views:
+        | never
+    }
+    'src/pages/steunen.vue': {
+      routes:
+        | '/steunen'
+        | '/steunen/bedankt'
+      views:
+        | 'default'
+    }
+    'src/pages/steunen/bedankt.vue': {
+      routes:
+        | '/steunen/bedankt'
+      views:
+        | never
+    }
+    'src/pages/veelgesteldevragen.vue': {
+      routes:
+        | '/veelgesteldevragen'
       views:
         | never
     }

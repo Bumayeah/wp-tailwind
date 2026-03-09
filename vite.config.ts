@@ -25,7 +25,9 @@ export default defineConfig({
         VueRouterAutoImports,
         '@vueuse/core',
         { '@tanstack/vue-query': ['useQuery', 'useMutation', 'useQueryClient'] },
+        { '@unhead/vue': ['useHead', 'useSeoMeta'] },
       ],
+      dirs: ['src/stores', 'src/shared/composables'],
       dts: 'src/auto-imports.d.ts',
     }),
     Components({

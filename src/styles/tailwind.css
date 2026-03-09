@@ -4,6 +4,8 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
+  /* Marquee animation */
+  --animate-marquee: marquee 50s linear infinite;
   /* Primary — SWG blauw */
   --color-primary-50: #e6edff;
   --color-primary-100: #ccdaff;
@@ -39,11 +41,52 @@
   --radius-2xl: 1rem;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause marquee on hover */
+.pause-marquee:hover,
+.hover\:pause-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* Base */
 @layer base {
   html {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Dark mode: base background + text (utilities always override this) */
+  :where([data-theme="dark"]) body {
+    background-color: color-mix(in oklch, var(--color-dark), black 15%);
+    color: white;
+  }
+
+  /* Dark mode: headings default to white (utilities override this) */
+  :where([data-theme="dark"]) h1,
+  :where([data-theme="dark"]) h2,
+  :where([data-theme="dark"]) h3,
+  :where([data-theme="dark"]) h4,
+  :where([data-theme="dark"]) h5,
+  :where([data-theme="dark"]) h6,
+  :where([data-theme="dark"]) legend {
+    color: white;
+  }
+
+  #app {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Focus visible — skip :focus in favour of :focus-visible */

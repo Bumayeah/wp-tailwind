@@ -8,6 +8,8 @@
     "dev:vite": "vite",
     "dev:mock": "json-server --watch mock-api/db.json --routes mock-api/routes.json --port 3001 --no-cors",
     "build": "run-s build-only type-check",
+    "build:preview": "run-s build-only:preview type-check",
+    "build-only:preview": "vite build --mode preview",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",

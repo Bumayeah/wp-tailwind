@@ -15,16 +15,7 @@ const { data: page } = useQuery({
 })
 
 const acf = computed(() => page.value?.acf as Record<string, any> | undefined)
-
-// Atmosphere gallery photos (static — provided by photographer)
-const galleryPhotos = [
-  { src: '/images/trips/italie.jpg', alt: 'Skiweek Italië' },
-  { src: '/images/trips/oostenrijk.jpg', alt: 'Skiweek Oostenrijk' },
-  { src: '/images/blog/post1.jpg', alt: 'Seizoen opening' },
-  { src: '/images/blog/post2.jpg', alt: 'Nieuw materiaal' },
-  { src: '/images/blog/post3.jpg', alt: 'Terugblik Italië' },
-  { src: '/images/pages/over-ons-1.jpg', alt: 'Vrijwilligers op de piste' },
-]
+const galleryPhotos = computed<{ src: string; alt: string }[]>(() => acf.value?.gallery ?? [])
 </script>
 
 <template>

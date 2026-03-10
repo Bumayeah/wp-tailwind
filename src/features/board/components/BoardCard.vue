@@ -3,9 +3,7 @@ import type { BoardMember } from '../board.schema'
 
 const props = defineProps<{ member: BoardMember }>()
 
-const photoUrl = computed(() =>
-  props.member.photo ? `/images/board/${props.member.photo}` : null,
-)
+const photoUrl = computed(() => props.member.photo || null)
 
 const initials = computed(() =>
   props.member.name

@@ -134,6 +134,14 @@
         "hero_description": "SWG Nederland is een vrijwilligersorganisatie die groepsreizen op de piste organiseert voor mensen met én zonder beperking.",
         "hero_image": "",
         "show_gallery": true,
+        "gallery": [
+          { "src": "/images/trips/italie.jpg", "alt": "Skiweek Italië" },
+          { "src": "/images/trips/oostenrijk.jpg", "alt": "Skiweek Oostenrijk" },
+          { "src": "/images/blog/post1.jpg", "alt": "Seizoen opening" },
+          { "src": "/images/blog/post2.jpg", "alt": "Nieuw materiaal" },
+          { "src": "/images/blog/post3.jpg", "alt": "Terugblik Italië" },
+          { "src": "/images/pages/over-ons-1.jpg", "alt": "Vrijwilligers op de piste" }
+        ],
         "show_cta": true,
         "cta_heading": "Doe mee met SWG Nederland",
         "cta_body": "Sluit je aan als deelnemer, begeleider of sponsor en maak het verschil.",
@@ -494,7 +502,7 @@
       "name": "Mark Boeren",
       "role": "Voorzitter",
       "bio": "Mijn naam is Mark Boeren en ik mag al sinds 2002 mee met de SWG. Ik ben getrouwd in het Kaunertal met mijn vrouw Esther en wij zijn de gelukkige ouders van twee stoere mannetjes Pepijn en Tommy.\n\nZelf ben ik helemaal verzot op wintersport en nadat mijn vader (zelf een rolstoelgebruiker) mee was gegaan met een SWG-week, ben ik besmet geraakt met het leuke SWG-virus. De week zit altijd vol met emoties, van extreme lachbuien tot en met emotionele mooie momenten.\n\nSinds 2020 ben ik voorzitter en met een enorm enthousiast team proberen we 2 onvergetelijke weken in de bergen te organiseren.",
-      "photo": "mark.jpeg",
+      "photo": "/images/board/mark.jpeg",
       "sort_order": 1
     },
     {
@@ -502,7 +510,7 @@
       "name": "Wendy Ceelen",
       "role": "Secretariaat",
       "bio": "Ruim twintig jaar geleden maakte ik mijn eerste reis met de SWG, geïnspireerd door mijn vader Riny die zich jarenlang heeft ingezet voor de stichting. De unieke sfeer en gezelligheid van deze reizen grepen me direct, waardoor ik nu nog steeds jaarlijks meega.\n\nWintersport is voor mij een vakantie om naar uit te kijken. Als actief lid van de SWG streef ik ernaar om deze ervaring toegankelijk te maken voor alle deelnemers en begeleiders. Zelf sta ik al sinds mijn kleuterjaren op de ski's en ga ik meerdere keren per jaar op wintersport.\n\nSamen met mijn partner Harry deel ik deze passie voor wintersport. Bij de SWG ben ik verantwoordelijk voor het secretariaat, wat ik naast mijn reguliere werk met veel plezier en voldoening doe.",
-      "photo": "wendy.jpg",
+      "photo": "/images/board/wendy.jpg",
       "sort_order": 2
     },
     {
@@ -510,7 +518,7 @@
       "name": "Martin Passon",
       "role": "Penningmeester",
       "bio": "Ik ben Martin Passon en woon in Culemborg met mijn vrouw en 3 pubers: 2 zonen Thomas en Kasper, en dochter Merel.\n\nNa het stoppen bij andere stichtingen hoorde Paul dit en vroeg of ik niet bij de SWG als penningmeester aan de slag wilde. Ik had al veel verhalen gehoord, dus ben er vol goede moed ingestapt. Na enkele gesprekken met Piet is de overname van het stokje begonnen — Piet heeft het perfect achtergelaten.\n\nIn eerste instantie ga ik vooral de administratie voor de stichting verzorgen. De bedoeling is om ook aan te sluiten bij de reizen, maar dat zien we wel als het zover is. Voor nu ben ik dus druk met de voorbereidingen en wellicht tot ziens op één van de reizen!",
-      "photo": "martin.jpeg",
+      "photo": "/images/board/martin.jpeg",
       "sort_order": 3
     },
     {
@@ -518,7 +526,7 @@
       "name": "Paul van Grinsven",
       "role": "Materiaal",
       "bio": "Mijn naam is Paul van Grinsven, 51 jaar oud. Alweer 11 jaar geleden ging ik voor de eerste keer mee als begeleider naar Italië met een SWG-reis. Ik woon in Boxtel met mijn vrouw Fleur en twee kinderen Jasper en Sanne.\n\nNu alweer 7 jaar in het bestuur, waarvan de laatste 3 jaar als materiaalman voor de reizen. Ik vind techniek en sleutelen erg leuk, maar de gezelligheid en sfeer tijdens de reizen is toch wel waar ik voor gevallen ben vanaf mijn eerste reis.\n\nZelf ski ik vanaf mijn 18e en heb tussendoor ook nog wat jaartjes op een snowboard gestaan. Nu probeer ik ieder jaar met mijn gezin te gaan skiën en dan gaan we meestal richting Scandinavië.",
-      "photo": "paul.jpg",
+      "photo": "/images/board/paul.jpg",
       "sort_order": 4
     },
     {
@@ -526,7 +534,7 @@
       "name": "Angelique Hijweege",
       "role": "Algemeen bestuurslid",
       "bio": "Mijn naam is Angelique Hijweege, geboren in 1977 in Vught. Ik woon samen met mijn vriend Menno in De Rips. Ik heb twee zonen en ben sinds juni 2024 trotse oma van een kleindochter Jade.\n\nIk heb het geluk dat mijn voltijd baan een grote hobby van me is. Daarnaast is fotografie ook echt wel een hobby van me, met name portretfotografie — daarmee leg je de persoonlijkheid, emoties en unieke uitstraling van een persoon vast.\n\nVan jongs af aan heb ik een grote passie voor skiën. Toen ik de SWG ontdekte, wist ik meteen: hier wil ik iets in betekenen. Mijn doel is om er mede voor te zorgen dat iedereen, ongeacht fysieke uitdagingen, kan genieten van de prachtige ervaring die skiën biedt.",
-      "photo": "angelique.jpeg",
+      "photo": "/images/board/angelique.jpeg",
       "sort_order": 5
     },
     {
@@ -534,7 +542,7 @@
       "name": "Bas van Boven",
       "role": "Algemeen bestuurslid",
       "bio": "Ik luister naar de naam Bas, sommigen noemen mij ook wel 'die Lange'. Trotse vader van 2 prachtige dochters Marit en Bente, en sinds kort woonachtig in IJzendijke.\n\nMijn passie is wintersport: skiën doe ik sinds ik kan lopen, in het verleden wedstrijden geskied, 6 seizoenen les gegeven bij Hartkaiser Skischule in Ellmau, en vele jaren indoor in Terneuzen. Via mijn werk gecertificeerd Erkend wintersport specialist en Master Skibootfitter.\n\nSWG voelt voor mij als familie, en ik blijf het bijzonder vinden hoe elke keer zo'n grote groep samensmelt met als uitgangspunt plezier beleven aan wintersport. Voor mij is het elk jaar weer herinneringen maken die ik niet snel zal vergeten.",
-      "photo": "bas.jpeg",
+      "photo": "/images/board/bas.jpeg",
       "sort_order": 6
     },
     {
@@ -542,7 +550,7 @@
       "name": "Pim Brouwers",
       "role": "Algemeen bestuurslid",
       "bio": "Mijn naam is Pim Brouwers en al jarenlang een fanatiek zitskiër. Mijn eerste stappen in de skisport heb ik bij de SWG gezet — ik ga namelijk al mee vanaf 2001, begonnen in de Bi-Unique en later overgestapt op de monoski.\n\nDe eerste 11 jaar (van 2001 t/m 2012) ben ik met mijn ouders en zussen naar Italië geweest, inmiddels ben ik ook al een aantal jaren mee geweest naar Oostenrijk. Dit alles als deelnemer.\n\nSinds 2022 ga ik mee als begeleider en houd ik me ook bezig met de website en social media van SWG. Als begeleider vind ik het fantastisch om anderen met een handicap te laten zien wat er wel kan en hen te motiveren om net zo te genieten van de skisport zoals ik dat zelf doe.",
-      "photo": "pim.jpg",
+      "photo": "/images/board/pim.jpg",
       "sort_order": 7
     }
   ],
